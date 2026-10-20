@@ -1,0 +1,840 @@
+/* =========================================
+   FX PULSE — LESSON 6 LAB
+   CSS styling and responsive design
+   ========================================= */
+
+/* 1. CSS VARIABLES AND BOX MODEL */
+
+:root {
+    box-sizing: border-box;
+
+    --page: #0b1020;
+    --panel: #121a2d;
+    --panel-light: #172239;
+    --text: #f4f7ff;
+    --muted: #9aa8c4;
+    --green: #55e6b0;
+    --blue: #7c9cff;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* 2. GENERAL PAGE STYLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(77, 107, 255, 0.16),
+            transparent 28rem
+        ),
+        var(--page);
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--green);
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+/* 3. NAVIGATION BAR */
+
+.topbar {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+/* Website logo */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 1.1rem;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+}
+
+.brand strong {
+    color: var(--green);
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 12px;
+
+    color: #07121a;
+    background: var(--green);
+
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
+/* Navigation links */
+
+.navigation {
+    display: flex;
+    gap: 30px;
+
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.navigation a {
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.navigation a.active {
+    color: var(--text);
+}
+
+/* Navigation button and main buttons */
+
+.top-button,
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+    font-size: 0.9rem;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.top-button {
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+}
+
+.primary-button {
+    color: #06150f;
+    background: var(--green);
+    padding: 13px 20px;
+}
+
+.top-button:hover,
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:hover {
+    color: #06150f;
+    background: #8bf4ce;
+}
+
+/* 4. MAIN CONTENT CONTAINER */
+
+main {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+/* 5. HERO SECTION */
+
+.hero {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(320px, 0.9fr);
+
+    align-items: center;
+
+    gap: clamp(32px, 6vw, 82px);
+
+    padding: clamp(56px, 9vw, 110px) 0 84px;
+}
+
+/* Small green headings */
+
+.eyebrow {
+    color: var(--green);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+
+    margin: 0 0 14px;
+}
+
+/* Small decorative green dot */
+
+.live-dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 0 4px rgba(85, 230, 176, 0.12);
+
+    vertical-align: middle;
+}
+
+/* Main headline */
+
+h1 {
+    font-size: clamp(2.5rem, 5.4vw, 4.6rem);
+
+    letter-spacing: -0.065em;
+    line-height: 1.06;
+
+    margin-bottom: 24px;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+/* Description below the headline */
+
+.hero-description {
+    max-width: 510px;
+
+    color: var(--muted);
+    font-size: 1.04rem;
+
+    margin-bottom: 28px;
+}
+
+/* Buttons below the description */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 22px;
+}
+
+.text-button {
+    color: #d6def0;
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+/* Small educational disclaimer */
+
+.disclaimer {
+    max-width: 480px;
+
+    margin: 28px 0 0;
+
+    color: #74819d;
+    font-size: 0.75rem;
+}
+
+/* 6. FEATURED FOREX CARD */
+
+.hero-card {
+    min-width: 0;
+
+    padding: clamp(22px, 3vw, 34px);
+
+    border: 1px solid var(--border);
+    border-radius: 26px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(26, 39, 63, 0.96),
+        rgba(16, 23, 40, 0.96)
+    );
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.22);
+}
+
+/* Reusable horizontal layouts */
+
+.card-topline,
+.pair-heading,
+.hero-card-footer,
+.market-card-top,
+.market-price-row,
+.section-heading,
+.chart-labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Featured card labels */
+
+.pair-label,
+.market-status {
+    color: var(--muted);
+
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.market-status {
+    letter-spacing: 0;
+    font-size: 0.75rem;
+}
+
+/* Currency symbols and names */
+
+.pair-heading {
+    justify-content: flex-start;
+    margin: 26px 0 12px;
+}
+
+.currency-icons {
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+}
+
+.currency-icons span {
+    display: grid;
+    place-items: center;
+
+    width: 43px;
+    height: 43px;
+
+    border-radius: 50%;
+    border: 3px solid var(--panel);
+
+    color: #08131e;
+    background: #8ea7ff;
+
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+/* Overlap the two currency circles */
+
+.currency-icons span + span {
+    margin-left: -12px;
+
+    color: #072116;
+    background: var(--green);
+}
+
+.pair-heading h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.pair-heading p {
+    margin: 2px 0 0;
+
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* Featured currency price */
+
+.price {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+    letter-spacing: -0.05em;
+    font-weight: 750;
+
+    margin: 18px 0 0;
+}
+
+.price-up {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    color: var(--green);
+    font-size: 0.95rem;
+
+    letter-spacing: 0;
+    vertical-align: middle;
+}
+
+/* 7. CHART STYLING */
+
+.chart-wrap {
+    margin: 12px -8px 0;
+    overflow: hidden;
+}
+
+.chart {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.chart-area {
+    fill: url(#areaFill);
+}
+
+.chart-line {
+    fill: none;
+
+    stroke: var(--green);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.chart-labels {
+    color: #6f7d99;
+    font-size: 0.7rem;
+
+    border-bottom: 1px solid var(--border);
+    padding: 0 0 18px;
+}
+
+.hero-card-footer {
+    padding-top: 17px;
+
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.hero-card-footer strong {
+    color: var(--green);
+}
+
+/* 8. MARKET WATCH SECTION */
+
+.market-section {
+    padding: 26px 0 84px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2,
+.learn-copy h2,
+.bottom-banner h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+    letter-spacing: -0.045em;
+    margin: 0;
+
+    line-height: 1.2;
+}
+
+/* Sample prices label */
+
+.demo-pill {
+    color: #c7d2eb;
+
+    background: rgba(124, 156, 255, 0.1);
+    border: 1px solid rgba(124, 156, 255, 0.2);
+
+    padding: 7px 11px;
+    border-radius: 999px;
+
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+/* Arrange four cards in a grid */
+
+.market-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+/* Individual currency cards */
+
+.market-card {
+    padding: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    background: rgba(18, 26, 45, 0.78);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* Hover effect: lift the card slightly */
+
+.market-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(85, 230, 176, 0.45);
+}
+
+/* Currency icon boxes */
+
+.coin-badge {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+/* Different colors for currency symbols */
+
+.euro {
+    color: #a8bbff;
+    background: rgba(124, 156, 255, 0.15);
+}
+
+.pound {
+    color: #d0b6ff;
+    background: rgba(179, 130, 255, 0.15);
+}
+
+.yen {
+    color: #ffc2a3;
+    background: rgba(255, 153, 107, 0.15);
+}
+
+.swiss {
+    color: #ffabb8;
+    background: rgba(255, 117, 146, 0.15);
+}
+
+/* Currency percentage changes */
+
+.trend {
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.up {
+    color: var(--green);
+}
+
+.down {
+    color: #ff9cae;
+}
+
+/* Currency pair name */
+
+.pair-name {
+    margin: 18px 0 0;
+
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.pair-desc {
+    color: var(--muted);
+    font-size: 0.76rem;
+
+    margin: 2px 0 18px;
+}
+
+/* Price and miniature trend indicator */
+
+.market-price-row strong {
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+}
+
+.mini-line {
+    font-size: 1.15rem;
+    letter-spacing: -0.12em;
+    white-space: nowrap;
+}
+
+.positive {
+    color: var(--green);
+}
+
+.negative {
+    color: #ff9cae;
+}
+
+/* 9. FOREX LEARNING SECTION */
+
+.learn-section {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: clamp(32px, 7vw, 100px);
+
+    padding: 72px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.learn-copy > p:not(.eyebrow) {
+    color: var(--muted);
+
+    margin-top: 20px;
+    max-width: 420px;
+}
+
+/* Learning steps */
+
+.learn-steps {
+    display: grid;
+    gap: 0;
+}
+
+.learn-step {
+    display: flex;
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.learn-step:first-child {
+    padding-top: 0;
+}
+
+.step-number {
+    color: var(--green);
+
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+.learn-step h3 {
+    font-size: 1rem;
+    margin: 0 0 5px;
+}
+
+.learn-step p {
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+/* 10. BOTTOM BANNER */
+
+.bottom-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin: 10px 0 70px;
+    padding: clamp(24px, 4vw, 42px);
+
+    border: 1px solid rgba(85, 230, 176, 0.2);
+    border-radius: 22px;
+
+    background: linear-gradient(
+        110deg,
+        rgba(85, 230, 176, 0.09),
+        rgba(124, 156, 255, 0.08)
+    );
+}
+
+.bottom-banner .eyebrow {
+    margin-bottom: 8px;
+}
+
+.bottom-banner h2 {
+    max-width: 650px;
+
+    font-size: clamp(1.45rem, 2.7vw, 2.1rem);
+}
+
+/* 11. FOOTER */
+
+.footer {
+    width: min(1160px, calc(100% - 48px));
+    min-height: 90px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.footer-brand {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer > a:last-child {
+    color: var(--green);
+}
+
+/* 12. RESPONSIVE DESIGN: TABLETS */
+
+@media (max-width: 900px) {
+
+    /* Put the hero content into one column */
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .hero-copy {
+        max-width: 700px;
+    }
+
+    .hero-card {
+        max-width: 620px;
+        width: 100%;
+    }
+
+    /* Display two currency cards per row */
+
+    .market-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .learn-section {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+}
+
+/* 13. RESPONSIVE DESIGN: MOBILE PHONES */
+
+@media (max-width: 600px) {
+
+    .topbar,
+    main,
+    .footer {
+        width: calc(100% - 32px);
+    }
+
+    .topbar {
+        min-height: 72px;
+
+        flex-wrap: wrap;
+
+        padding: 14px 0;
+        gap: 14px;
+    }
+
+    /* Move navigation onto its own row */
+
+    .navigation {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .top-button {
+        padding: 8px 11px;
+        font-size: 0.78rem;
+    }
+
+    .hero {
+        padding: 52px 0 58px;
+    }
+
+    /* Make the headline fit a phone screen */
+
+    h1 {
+        font-size: clamp(2.35rem, 12vw, 3.5rem);
+    }
+
+    .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* Display one market card per row */
+
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .bottom-banner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 22px 0;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

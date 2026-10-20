@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FX Pulse | Forex Market Dashboard</title>
+
+    <!-- Connect the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER AND NAVIGATION -->
+    <header class="topbar">
+
+        <a class="brand" href="#dashboard">
+            <span class="brand-mark">FX</span>
+            <span>FX <strong>Pulse</strong></span>
+        </a>
+
+        <nav class="navigation">
+            <a class="active" href="#dashboard">Dashboard</a>
+            <a href="#markets">Markets</a>
+            <a href="#learn">Learn</a>
+        </nav>
+
+        <a class="top-button" href="#markets">
+            Explore markets ↗
+        </a>
+
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="dashboard">
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    <span class="live-dot"></span>
+                    MARKET SNAPSHOT · DEMO DATA
+                </p>
+
+                <h1>
+                    Make your next move
+                    <br>
+                    <span>with confidence.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A clean starting point for exploring the forex market.
+                    Track sample currency pairs, learn the basics, and build
+                    your market-watching habit.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="primary-button" href="#markets">
+                        View market watch →
+                    </a>
+
+                    <a class="text-button" href="#learn">
+                        How forex works
+                    </a>
+                </div>
+
+                <p class="disclaimer">
+                    Educational project only — figures below are fictional
+                    sample data, not live prices or financial advice.
+                </p>
+
+            </div>
+
+            <!-- FEATURED CURRENCY CARD -->
+            <div class="hero-card">
+
+                <div class="card-topline">
+                    <span class="pair-label">FEATURED PAIR</span>
+
+                    <span class="market-status">
+                        <span class="live-dot"></span>
+                        Sample
+                    </span>
+                </div>
+
+                <div class="pair-heading">
+
+                    <div class="currency-icons">
+                        <span>€</span>
+                        <span>$</span>
+                    </div>
+
+                    <div>
+                        <h2>EUR / USD</h2>
+                        <p>Euro · US Dollar</p>
+                    </div>
+
+                </div>
+
+                <p class="price">
+                    1.0842
+                    <span class="price-up">+0.42%</span>
+                </p>
+
+                <!-- Decorative chart made with SVG -->
+                <div class="chart-wrap">
+
+                    <svg class="chart" viewBox="0 0 440 130"
+                         role="img" aria-label="Illustrative upward chart">
+
+                        <defs>
+                            <linearGradient id="areaFill"
+                                x1="0" y1="0" x2="0" y2="1">
+
+                                <stop offset="0%"
+                                      stop-color="#55e6b0"
+                                      stop-opacity=".28"/>
+
+                                <stop offset="100%"
+                                      stop-color="#55e6b0"
+                                      stop-opacity="0"/>
+
+                            </linearGradient>
+                        </defs>
+
+                        <path class="chart-area"
+                            d="M0,105 C22,96 24,80 48,88
+                            S83,102 104,69 S143,81 165,58
+                            S202,68 226,43 S261,55 286,34
+                            S325,51 346,22 S387,39 410,12
+                            L440,8 L440,130 L0,130 Z"/>
+
+                        <path class="chart-line"
+                            d="M0,105 C22,96 24,80 48,88
+                            S83,102 104,69 S143,81 165,58
+                            S202,68 226,43 S261,55 286,34
+                            S325,51 346,22 S387,39 410,12
+                            L440,8"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="chart-labels">
+                    <span>09:00</span>
+                    <span>12:00</span>
+                    <span>15:00</span>
+                    <span>18:00</span>
+                </div>
+
+                <div class="hero-card-footer">
+                    <span>Today's change</span>
+                    <strong>+0.0045</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MARKET WATCH SECTION -->
+        <section class="market-section" id="markets">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">KEEP AN EYE ON IT</p>
+                    <h2>Market watch</h2>
+                </div>
+
+                <span class="demo-pill">SAMPLE PRICES</span>
+
+            </div>
+
+            <div class="market-grid">
+
+                <!-- Currency card 1 -->
+                <article class="market-card">
+
+                    <div class="market-card-top">
+                        <span class="coin-badge euro">€</span>
+                        <span class="trend up">↗ +0.42%</span>
+                    </div>
+
+                    <p class="pair-name">EUR / USD</p>
+                    <p class="pair-desc">Euro / US Dollar</p>
+
+                    <div class="market-price-row">
+                        <strong>1.0842</strong>
+                        <span class="mini-line positive">▁▂▁▃▂▄▅▆</span>
+                    </div>
+
+                </article>
+
+                <!-- Currency card 2 -->
+                <article class="market-card">
+
+                    <div class="market-card-top">
+                        <span class="coin-badge pound">£</span>
+                        <span class="trend up">↗ +0.18%</span>
+                    </div>
+
+                    <p class="pair-name">GBP / USD</p>
+                    <p class="pair-desc">British Pound / US Dollar</p>
+
+                    <div class="market-price-row">
+                        <strong>1.2710</strong>
+                        <span class="mini-line positive">▁▂▃▂▄▃▅▆</span>
+                    </div>
+
+                </article>
+
+                <!-- Currency card 3 -->
+                <article class="market-card">
+
+                    <div class="market-card-top">
+                        <span class="coin-badge yen">¥</span>
+                        <span class="trend down">↘ −0.12%</span>
+                    </div>
+
+                    <p class="pair-name">USD / JPY</p>
+                    <p class="pair-desc">US Dollar / Japanese Yen</p>
+
+                    <div class="market-price-row">
+                        <strong>149.62</strong>
+                        <span class="mini-line negative">▆▅▆▄▅▃▂▃</span>
+                    </div>
+
+                </article>
+
+                <!-- Currency card 4 -->
+                <article class="market-card">
+
+                    <div class="market-card-top">
+                        <span class="coin-badge swiss">₣</span>
+                        <span class="trend up">↗ +0.07%</span>
+                    </div>
+
+                    <p class="pair-name">USD / CHF</p>
+                    <p class="pair-desc">US Dollar / Swiss Franc</p>
+
+                    <div class="market-price-row">
+                        <strong>0.8821</strong>
+                        <span class="mini-line positive">▂▁▃▂▄▃▄▅</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- FOREX EDUCATION SECTION -->
+        <section class="learn-section" id="learn">
+
+            <div class="learn-copy">
+
+                <p class="eyebrow">START WITH THE BASICS</p>
+
+                <h2>Forex, in a nutshell.</h2>
+
+                <p>
+                    Forex means <strong>foreign exchange</strong>.
+                    Traders compare one currency with another.
+                    In EUR/USD, EUR is the base currency and USD is
+                    the quote currency.
+                </p>
+
+            </div>
+
+            <div class="learn-steps">
+
+                <article class="learn-step">
+
+                    <span class="step-number">01</span>
+
+                    <div>
+                        <h3>Choose a pair</h3>
+
+                        <p>
+                            For example, EUR/USD compares the euro
+                            with the US dollar.
+                        </p>
+                    </div>
+
+                </article>
+
+                <article class="learn-step">
+
+                    <span class="step-number">02</span>
+
+                    <div>
+                        <h3>Read the quote</h3>
+
+                        <p>
+                            A sample quote of 1.0842 means one euro
+                            is worth 1.0842 US dollars.
+                        </p>
+                    </div>
+
+                </article>
+
+                <article class="learn-step">
+
+                    <span class="step-number">03</span>
+
+                    <div>
+                        <h3>Manage your risk</h3>
+
+                        <p>
+                            Prices can move either way. Learn first
+                            and never risk money you cannot afford to lose.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- BOTTOM BANNER -->
+        <section class="bottom-banner">
+
+            <div>
+                <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+
+                <h2>Curiosity first. Risk management always.</h2>
+            </div>
+
+            <a href="#dashboard" class="primary-button">
+                Back to top ↑
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a class="brand footer-brand" href="#dashboard">
+            <span class="brand-mark">FX</span>
+            <span>FX <strong>Pulse</strong></span>
+        </a>
+
+        <p>Built for Lesson 6 CSS practice · Static demo page</p>
+
+        <a href="#learn">Learn the basics ↑</a>
+
+    </footer>
+
+</body>
+</html>
